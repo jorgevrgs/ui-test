@@ -1,13 +1,13 @@
 <template>
   <footer
-    class="flex items-end justify-between ml-0 mr-4 my-8 border-t-2 border-dotted border-gray-1200 md:py-12"
+    class="flex items-end justify-between pt-0 px-4 pb-12 border-t-2 border-dotted border-gray-1200 md:py-12"
   >
     <div>
       <ul class="md:flex">
         <li
           v-for="footerLink in footerLinks"
           :href="footerLink.href"
-          class="md:mr-8 md:text-base md:p-0"
+          class="text-xl py-2 px-0 md:mr-8 md:text-base md:p-0"
         >
           <a href="footerLink.href" class="text-gray-900">{{
             footerLink.text
@@ -17,11 +17,11 @@
     </div>
     <div class="md:flex md:items-center">
       <span class="md:mr-4 md:text-sm">Follow us</span>
-      <ul class="md:flex">
+      <ul class="flex mt-4">
         <li
           v-for="socialLink in socialLinks"
           :key="socialLink.text"
-          class="md:mr-8 md:text-base md:p-0"
+          class="mr-4 md:mr-8 md:text-base md:p-0"
         >
           <a
             :href="socialLink.href"
