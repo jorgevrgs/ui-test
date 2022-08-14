@@ -38,8 +38,8 @@
 
 <script lang="ts">
   import { defineComponent } from "vue";
-  import Facebook from "@/components/Facebook.vue";
-  import Twitter from "@/components/Twitter.vue";
+  import FacebookIcon from "@/components/icons/FacebookIcon.vue";
+  import TwitterIcon from "@/components/icons/TwitterIcon.vue";
 
   export default defineComponent({
     data: () => ({
@@ -64,12 +64,12 @@
           {
             text: "Facebook",
             href: "#",
-            component: Facebook,
+            component: FacebookIcon,
           },
           {
             text: "Twitter",
             href: "#",
-            component: Twitter,
+            component: TwitterIcon,
           },
         ];
       },
