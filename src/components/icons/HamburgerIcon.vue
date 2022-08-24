@@ -1,9 +1,9 @@
 <template>
   <base-icon
-    src="search.svg"
-    alt="Search"
-    width="36"
-    height="36"
+    src="hamburger.svg"
+    alt="Hamburger"
+    width="25"
+    height="20"
     class="text-gray-900 hover:decoration-solid"
   />
 </template>

@@ -5,9 +5,10 @@
     <div>
       <ul class="md:flex">
         <li
-          v-for="footerLink in footerLinks"
+          v-for="(footerLink, index) in footerLinks"
           :href="footerLink.href"
           class="text-xl py-2 px-0 md:mr-8 md:text-base md:p-0"
+          :key="index"
         >
           <a href="footerLink.href" class="text-gray-900">{{
             footerLink.text
@@ -37,44 +38,44 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from "vue";
-  import FacebookIcon from "@/components/icons/FacebookIcon.vue";
-  import TwitterIcon from "@/components/icons/TwitterIcon.vue";
+import FacebookIcon from '@/components/icons/FacebookIcon.vue';
+import TwitterIcon from '@/components/icons/TwitterIcon.vue';
+import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    data: () => ({
-      footerLinks: [
-        {
-          text: "Terms and Conditions",
-          href: "#",
-        },
-        {
-          text: "Privacy Policy",
-          href: "#",
-        },
-        {
-          text: "Contact Us",
-          href: "#",
-        },
-      ],
-    }),
-    computed: {
-      socialLinks() {
-        return [
-          {
-            text: "Facebook",
-            href: "#",
-            component: FacebookIcon,
-          },
-          {
-            text: "Twitter",
-            href: "#",
-            component: TwitterIcon,
-          },
-        ];
+export default defineComponent({
+  data: () => ({
+    footerLinks: [
+      {
+        text: 'Terms and Conditions',
+        href: '#',
       },
+      {
+        text: 'Privacy Policy',
+        href: '#',
+      },
+      {
+        text: 'Contact Us',
+        href: '#',
+      },
+    ],
+  }),
+  computed: {
+    socialLinks() {
+      return [
+        {
+          text: 'Facebook',
+          href: '#',
+          component: FacebookIcon,
+        },
+        {
+          text: 'Twitter',
+          href: '#',
+          component: TwitterIcon,
+        },
+      ];
     },
-  });
+  },
+});
 </script>
 
 <style scoped></style>
