@@ -1,16 +1,15 @@
-import { createRouter, createWebHistory, RouterOptions } from "vue-router";
-import MainLayout from "@/layouts/MainLayout.vue";
+import MainLayout from '@/layouts/MainLayout.vue';
+import { createRouter, createWebHistory, RouterOptions } from 'vue-router';
 
-const routes: RouterOptions["routes"] = [
+const routes: RouterOptions['routes'] = [
   {
-    path: "/",
-    name: "IndexPage",
+    path: '/',
     component: MainLayout,
     children: [
       {
-        path: "/",
-        name: "IndexPage",
-        component: () => import("@/pages/Index.vue"),
+        path: '/',
+        name: 'IndexPage',
+        component: () => import('@/pages/Index.vue'),
       },
     ],
   },
