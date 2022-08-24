@@ -29,7 +29,6 @@
             class="text-gray-900 hover:decoration-solid"
           >
             <component :is="socialLink.component" aria-hidden="true" />
-            <span class="hidden">{{ socialLink.text }}</span>
           </a>
         </li>
       </ul>

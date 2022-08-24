@@ -1,5 +1,14 @@
 <template>
-  <img :src="assetFile" :alt="alt" :width="width" :height="height" />
+  <img
+    :src="assetFile"
+    :alt="alt"
+    :width="width"
+    :height="height"
+    role="img"
+    :aria-label="label"
+    v-bind="$attrs"
+  />
+  <span class="hidden">{{ label }}</span>
 </template>
 
 <script lang="ts">
@@ -16,20 +25,20 @@ export default defineComponent({
       required: true,
     },
     width: {
-      type: Number,
-      default: 24,
+      type: String,
+      default: '24',
     },
     height: {
-      type: Number,
-      default: 24,
+      type: String,
+      default: '24',
     },
   },
   computed: {
-    srcset() {
-      return `${this.src} 1x, ${this.src} 2x`;
-    },
     assetFile() {
       return new URL(`/icons/${this.src}`, import.meta.url).href;
+    },
+    label() {
+      return `${this.alt} icon`;
     },
   },
 });

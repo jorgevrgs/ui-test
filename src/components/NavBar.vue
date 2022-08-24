@@ -5,7 +5,7 @@
     @click="toggleNavBar"
     class="z-20"
   >
-    <HamburguerIcon />
+    <HamburgerIcon />
   </button>
 
   <nav
@@ -13,7 +13,7 @@
     :class="{ hidden: !isMenuOpen }"
   >
     <ul class="flex flex-col gap-12">
-      <li v-for="navLink in navLinks">
+      <li v-for="(navLink, i) in navLinks" :key="i">
         <a :href="navLink.href" class="text-3xl">
           {{ navLink.text }}
         </a>
@@ -21,7 +21,7 @@
 
       <li>
         <form>
-          <input aria-label="search" type="text" />
+          <input aria-label="search" type="text" autocomplete="off" />
           <button alt="Search" type="submit">
             <SearchIcon />
           </button>
@@ -32,35 +32,35 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from "vue";
-  import HamburguerIcon from "@/components/icons/HamburguerIcon.vue";
-  import SearchIcon from "@/components/icons/SearchIcon.vue";
+import HamburgerIcon from '@/components/icons/HamburgerIcon.vue';
+import SearchIcon from '@/components/icons/SearchIcon.vue';
+import { defineComponent } from 'vue';
 
-  export default defineComponent({
-    data: () => ({
-      isMenuOpen: false,
-      navLinks: [
-        {
-          text: "Past Trials",
-          href: "#",
-        },
-        {
-          text: "How It Works",
-          href: "#",
-        },
-        {
-          text: "Login / Sign Up",
-          href: "#",
-        },
-      ],
-    }),
-    components: { HamburguerIcon, SearchIcon },
-    methods: {
-      toggleNavBar() {
-        this.isMenuOpen = !this.isMenuOpen;
+export default defineComponent({
+  data: () => ({
+    isMenuOpen: false,
+    navLinks: [
+      {
+        text: 'Past Trials',
+        href: '#',
       },
+      {
+        text: 'How It Works',
+        href: '#',
+      },
+      {
+        text: 'Login / Sign Up',
+        href: '#',
+      },
+    ],
+  }),
+  components: { HamburgerIcon, SearchIcon },
+  methods: {
+    toggleNavBar() {
+      this.isMenuOpen = !this.isMenuOpen;
     },
-  });
+  },
+});
 </script>
 
 <style scoped></style>

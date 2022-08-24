@@ -1,7 +1,7 @@
 <template>
   <base-icon
     src="twitter.svg"
-    alt="Twitter"
+    alt="Follow us in Twitter"
     width="26"
     height="23"
     class="text-gray-900 hover:decoration-solid"

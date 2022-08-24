@@ -1,7 +1,7 @@
 <template>
   <BaseIcon
     src="facebook.svg"
-    alt="Facebook"
+    alt="Follow us in Facebook"
     width="24"
     height="24"
     class="text-gray-900 hover:decoration-solid"
