@@ -5,8 +5,15 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
+import { useCelebritiesStore } from '../stores/celebrities.store';
 
-export default defineComponent({});
+const celebritiesStore = useCelebritiesStore();
+
+export default defineComponent({
+  mounted() {
+    celebritiesStore.fetchCelebrities();
+  },
+});
 </script>
 
 <style lang="scss" scoped></style>
