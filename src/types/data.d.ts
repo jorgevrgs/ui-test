@@ -1,13 +1,21 @@
+import type { Timestamp } from 'firebase/firestore';
+
 export interface Celebrity {
   id: string;
   name: string;
-  imageURL: string;
+  category: string;
+  picture: string;
   description: string;
   votes: {
-    up: number;
-    down: number;
+    positive: number;
+    negative: number;
   };
+  lastUpdated: Date;
 }
+
+export type CelebrityStorageData = Omit<Celebrity, 'id'> & {
+  lastUpdated: Timestamp;
+};
 
 export interface BaseState<T> {
   data: T;
