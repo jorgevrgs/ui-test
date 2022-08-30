@@ -1,8 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./index.html", "./src/**/*.{vue,js,ts,jsx,tsx}"],
+  mode: 'jit',
+  content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        green: {
+          positive: 'rgb(var(--green-positive) / <alpha-value>)',
+        },
+        yellow: {
+          negative: 'rgb(var(--yellow-negative) / <alpha-value>)',
+        },
+      },
+    },
   },
-  plugins: [],
+  plugins: [require('@tailwindcss/line-clamp')],
 };

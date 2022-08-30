@@ -2,6 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  :root {
+    --yellow-negative: 249 173 29;
+    --green-positive: 60 187 180;
+  }
+}
+
 html,
 body {
   font-size: 14px;
