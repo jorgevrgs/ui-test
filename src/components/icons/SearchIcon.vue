@@ -1,6 +1,6 @@
 <template>
-  <base-icon
-    src="search.svg"
+  <BaseIcon
+    name="search"
     alt="Search"
     width="36"
     height="36"

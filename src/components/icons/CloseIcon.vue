@@ -1,11 +1,5 @@
 <template>
-  <BaseIcon
-    name="facebook"
-    alt="Follow us in Facebook"
-    width="24"
-    height="24"
-    class="text-gray-900 hover:decoration-solid"
-  />
+  <BaseIcon name="close" alt="Close" width="25" height="20" class="invert" />
 </template>
 
 <script lang="ts">

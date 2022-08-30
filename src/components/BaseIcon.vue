@@ -1,7 +1,7 @@
 <template>
   <img
     :src="assetFile"
-    :alt="alt"
+    :alt="label"
     :width="width"
     :height="height"
     role="img"
@@ -16,13 +16,13 @@ import { defineComponent } from 'vue';
 
 export default defineComponent({
   props: {
-    src: {
+    name: {
       type: String,
       required: true,
     },
     alt: {
       type: String,
-      required: true,
+      default: '',
     },
     width: {
       type: String,
@@ -35,10 +35,10 @@ export default defineComponent({
   },
   computed: {
     assetFile() {
-      return new URL(`/icons/${this.src}`, import.meta.url).href;
+      return new URL(`/icons/${this.name}.svg`, import.meta.url).href;
     },
     label() {
-      return `${this.alt} icon`;
+      return `${this.alt || this.name} icon`;
     },
   },
 });

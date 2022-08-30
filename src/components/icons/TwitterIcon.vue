@@ -1,6 +1,6 @@
 <template>
-  <base-icon
-    src="twitter.svg"
+  <BaseIcon
+    name="twitter"
     alt="Follow us in Twitter"
     width="26"
     height="23"

@@ -1,6 +1,6 @@
 <template>
-  <base-icon
-    src="hamburger.svg"
+  <BaseIcon
+    name="hamburger"
     alt="Hamburger"
     width="25"
     height="20"
