@@ -1,13 +1,11 @@
 <template>
-  <h2 class="text-3xl font-bold">Hello world!</h2>
-  <p class="text-xl">This is a simple Vue app.</p>
   <CelebritiesList :celebrities="celebrities" />
 </template>
 
 <script lang="ts">
+import CelebritiesList from '@/components/CelebritiesList.vue';
+import { useCelebritiesStore } from '@/stores/celebrities.store';
 import { defineComponent } from 'vue';
-import CelebritiesList from '../components/CelebritiesList.vue';
-import { useCelebritiesStore } from '../stores/celebrities.store';
 
 const celebritiesStore = useCelebritiesStore();
 

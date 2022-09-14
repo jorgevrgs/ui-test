@@ -1,5 +1,5 @@
 import { collection, getDocs } from 'firebase/firestore';
-import omit from 'lodash.omit';
+import { omit } from 'lodash-es';
 import { CELEBRITIES_COLLECTION } from '../constants';
 import { firestore } from '../plugins/firebase';
 import type { Celebrity, CelebrityStorageData } from '../types';

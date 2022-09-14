@@ -1,6 +1,6 @@
 <template>
   <article
-    class="flex flex-col items-center px-4 w-[300px] h-[300px] text-white relative"
+    class="flex flex-col items-center px-4 text-white relative aspect-square"
   >
     <CelebrityImage :name="celebrity.name" :picture="celebrity.picture" />
 

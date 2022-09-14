@@ -1,21 +1,113 @@
 <template>
-  <header class="bg-black text-white flex justify-between px-4 relative">
-    <h1 class="text-xl font-normal leading-10">Rule of thumb</h1>
-
-    <NavBar />
+  <NavBar />
+  <header class="hero">
+    <img
+      class="hero__background"
+      srcset="
+        assets/img/pope-francis.png      750w,
+        assets/img/pope-francis.@2x.png 1440w
+      "
+      sizes="(min-width: 750px) 1440px, 100vw"
+      src="assets/img/pope-francis.png"
+      alt="Pope Francis"
+    />
+    <div class="max-centered">
+      <div class="hero__featured-card">
+        <FeaturedCard />
+      </div>
+    </div>
+    <div class="hero__closing-gauge">
+      <div class="closing-gauge__left">
+        <span class="closing-gauge__title">closing in</span>
+      </div>
+      <div class="closing-gauge__right">
+        <span class="closing-gauge__number">22</span>
+        <span class="closing-gauge__desc">days</span>
+      </div>
+    </div>
   </header>
 </template>
 
 <script lang="ts">
-import NavBar from '@/components/NavBar.vue';
-import { defineComponent } from 'vue';
+import NavBar from "@/components/NavBar.vue";
+import { defineComponent } from "vue";
+import FeaturedCard from "./FeaturedCard.vue";
 
 export default defineComponent({
   setup() {
     return {};
   },
-  components: { NavBar },
+  components: { NavBar, FeaturedCard },
 });
 </script>
 
-<style scoped></style>
+<style>
+.hero {
+  position: relative;
+  overflow: hidden;
+  height: 80vw;
+  min-height: 35rem;
+  max-height: 38rem;
+  margin-bottom: 2rem;
+}
+
+.hero__background {
+  position: absolute;
+  left: -35vw;
+  width: 160vw;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__featured-card {
+  position: relative;
+  top: 5.5rem;
+  left: 1rem;
+  overflow: hidden;
+  width: 55vw;
+  max-height: 25rem;
+}
+
+.hero__closing-gauge {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  width: 100%;
+  height: 3rem;
+  background-color: var(--color-light-background);
+}
+
+@media all and (min-width: 768px) {
+  .hero {
+    max-height: 38rem;
+  }
+
+  .hero__background {
+    top: -6.5rem;
+    left: 0;
+    width: 110vw;
+    height: auto;
+  }
+}
+
+@media all and (min-width: 1100px) {
+  .hero {
+    min-height: 700px;
+  }
+
+  .hero__background {
+    top: -2.5rem;
+    left: 0;
+    width: 100vw;
+    height: auto;
+  }
+
+  .hero__featured-card {
+    left: 0;
+    width: 50%;
+    min-width: 600px;
+    max-height: unset;
+    margin-top: 2.5rem;
+  }
+}
+</style>

@@ -3,26 +3,9 @@
 </template>
 
 <script lang="ts">
-  import { defineComponent } from "vue";
-  import MainLayout from "@/layouts/MainLayout.vue";
+import { defineComponent } from "vue";
 
-  export default defineComponent({
-    components: {
-      MainLayout,
-    },
-  });
+export default defineComponent({});
 </script>
 
-<style scoped>
-  .logo {
-    height: 6em;
-    padding: 1.5em;
-    will-change: filter;
-  }
-  .logo:hover {
-    filter: drop-shadow(0 0 2em #646cffaa);
-  }
-  .logo.vue:hover {
-    filter: drop-shadow(0 0 2em #42b883aa);
-  }
-</style>
+<style></style>

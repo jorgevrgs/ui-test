@@ -1,34 +1,41 @@
 <template>
-  <footer
-    class="flex items-end justify-between pt-0 px-4 pb-12 border-t-2 border-dotted border-gray-1200 md:py-12"
-  >
-    <div>
-      <ul class="md:flex">
-        <li
-          v-for="(footerLink, index) in footerLinks"
-          :href="footerLink.href"
-          class="text-xl py-2 px-0 md:mr-8 md:text-base md:p-0"
-          :key="index"
-        >
-          <a href="footerLink.href" class="text-gray-900">{{
-            footerLink.text
-          }}</a>
+  <footer class="footer">
+    <div class="footer__links">
+      <ul>
+        <li>
+          <a href="#">Terms and Conditions</a>
+        </li>
+        <li>
+          <a href="#">Privacy Policy</a>
+        </li>
+        <li>
+          <a href="#">Contact Us</a>
         </li>
       </ul>
     </div>
-    <div class="md:flex md:items-center">
-      <span class="md:mr-4 md:text-sm">Follow us</span>
-      <ul class="flex mt-4">
-        <li
-          v-for="socialLink in socialLinks"
-          :key="socialLink.text"
-          class="mr-4 md:mr-8 md:text-base md:p-0"
-        >
-          <a
-            :href="socialLink.href"
-            class="text-gray-900 hover:decoration-solid"
-          >
-            <component :is="socialLink.component" aria-hidden="true" />
+    <div class="footer__social">
+      <span>Follow us</span>
+      <ul>
+        <li>
+          <a href="#">
+            <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M24 1.325v21.35c0 .732-.593 1.325-1.325 1.325H16.56v-9.294h3.12l.467-3.622H16.56V8.771c0-1.048.292-1.763 1.796-1.763h1.918v-3.24a25.663 25.663 0 00-2.795-.143c-2.766 0-4.659 1.688-4.659 4.788v2.671H9.691v3.622h3.128V24H1.325A1.325 1.325 0 010 22.676V1.325A1.325 1.325 0 011.325 0h21.35A1.325 1.325 0 0124 1.325z"
+                fill="#262626"
+                fill-rule="nonzero"
+              />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <svg width="26" height="23" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M23.329 6.204c.01.23.01.458.01.687A15.182 15.182 0 01-.008 19.688c.421.05.845.075 1.27.073a10.7 10.7 0 006.627-2.289 5.335 5.335 0 01-4.984-3.704c.798.151 1.62.12 2.404-.094a5.346 5.346 0 01-4.276-5.233v-.073a5.396 5.396 0 002.413.666 5.357 5.357 0 01-1.654-7.127A15.15 15.15 0 0012.79 7.484a5.898 5.898 0 01-.135-1.217 5.336 5.336 0 019.228-3.652 10.612 10.612 0 003.392-1.29 5.368 5.368 0 01-2.351 2.955 10.811 10.811 0 003.07-.843 10.868 10.868 0 01-2.664 2.767z"
+                fill="#262626"
+                fill-rule="nonzero"
+              />
+            </svg>
           </a>
         </li>
       </ul>
@@ -37,44 +44,77 @@
 </template>
 
 <script lang="ts">
-import FacebookIcon from '@/components/icons/FacebookIcon.vue';
-import TwitterIcon from '@/components/icons/TwitterIcon.vue';
-import { defineComponent } from 'vue';
+import { defineComponent } from "vue";
 
-export default defineComponent({
-  data: () => ({
-    footerLinks: [
-      {
-        text: 'Terms and Conditions',
-        href: '#',
-      },
-      {
-        text: 'Privacy Policy',
-        href: '#',
-      },
-      {
-        text: 'Contact Us',
-        href: '#',
-      },
-    ],
-  }),
-  computed: {
-    socialLinks() {
-      return [
-        {
-          text: 'Facebook',
-          href: '#',
-          component: FacebookIcon,
-        },
-        {
-          text: 'Twitter',
-          href: '#',
-          component: TwitterIcon,
-        },
-      ];
-    },
-  },
-});
+export default defineComponent({});
 </script>
 
-<style scoped></style>
+<style>
+.footer {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin: 0 1rem 3rem;
+}
+
+.footer__links li {
+  padding: 0.5rem 0;
+  font-size: 1.25rem;
+}
+
+.footer__links li a {
+  color: var(--color-dark-gray);
+  text-decoration: none;
+}
+
+.footer__links li a:hover {
+  color: var(--color-darker-gray);
+  text-decoration: underline;
+}
+
+.footer__social > span {
+  color: var(--color-darker-gray);
+  font-size: 1.25rem;
+  text-align: right;
+}
+
+.footer__social > ul {
+  display: flex;
+  margin-top: 1rem;
+}
+
+.footer__social > ul > li {
+  margin-right: 1rem;
+}
+
+@media all and (min-width: 768px) {
+  .footer {
+    align-items: flex-start;
+  }
+
+  .footer__links ul,
+  .footer__social {
+    display: flex;
+  }
+
+  .footer__links ul li {
+    padding: 0;
+    margin-right: 2rem;
+    font-size: 1rem;
+  }
+
+  .footer__social {
+    align-items: center;
+  }
+
+  .footer__social span {
+    margin-right: 1rem;
+    color: var(--color-dark-gray);
+    font-size: 0.833rem;
+  }
+
+  .footer__social > ul {
+    margin-top: 3px;
+  }
+}
+</style>
