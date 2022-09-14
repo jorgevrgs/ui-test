@@ -25,7 +25,7 @@
           <form action="javascript:void(0)">
             <input class="nav__search-input" aria-label="search" type="text" />
             <button class="nav__search icon-button" alt="Search" type="submit">
-              <img src="assets/img/search.svg" alt="search" />
+              <img src="/assets/img/search.svg" alt="search" />
             </button>
           </form>
         </li>
@@ -35,7 +35,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({});
 </script>
@@ -121,7 +121,7 @@ export default defineComponent({});
   background-color: transparent;
   border-radius: 0;
   color: var(--color-white);
-  font-family: "Lato", sans-serif;
+  font-family: 'Lato', sans-serif;
   font-size: 1.5rem;
   transition: width 0.2s ease-in;
 }

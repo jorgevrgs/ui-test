@@ -1,15 +1,14 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  mode: 'jit',
   content: ['./index.html', './src/**/*.{vue,js,ts,jsx,tsx}'],
   theme: {
     extend: {
       colors: {
         green: {
-          positive: 'rgb(var(--green-positive) / <alpha-value>)',
+          positive: '60 187 180',
         },
         yellow: {
-          negative: 'rgb(var(--yellow-negative) / <alpha-value>)',
+          negative: '249 173 29',
         },
       },
     },

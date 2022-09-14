@@ -1,10 +1,13 @@
 <template>
   <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
     <img
-      srcset="assets/img/bg-people.png 750w, assets/img/bg-people.@2x.png 1440w"
+      srcset="
+        /assets/img/bg-people.png      750w,
+        /assets/img/bg-people.@2x.png 1440w
+      "
       sizes="(min-width: 750px) 1440px, 100vw"
       class="banner__background"
-      src="assets/img/bg-people.png"
+      src="/assets/img/bg-people.png"
       alt=""
       role="none"
     />
@@ -20,7 +23,7 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from "vue";
+import { defineComponent } from 'vue';
 
 export default defineComponent({});
 </script>

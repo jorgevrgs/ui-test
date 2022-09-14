@@ -8,7 +8,6 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': resolve(__dirname, 'src'),
-      '~': resolve(__dirname, 'node_modules'),
     },
   },
   envPrefix: ['VITE_', 'FIREBASE_'],

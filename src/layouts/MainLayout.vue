@@ -9,14 +9,138 @@
 </template>
 
 <script lang="ts">
-import TheFooter from "@/components/TheFooter.vue";
-import TheHeader from "@/components/TheHeader.vue";
-import { defineComponent } from "vue";
-import TheBody from "../components/TheBody.vue";
+import TheFooter from '@/components/TheFooter.vue';
+import TheHeader from '@/components/TheHeader.vue';
+import { defineComponent } from 'vue';
+import TheBody from '../components/TheBody.vue';
 
 export default defineComponent({
   components: { TheFooter, TheHeader, TheBody },
 });
 </script>
 
-<style lang="scss" scoped></style>
+<style>
+html,
+body {
+  width: 100%;
+  margin: 0;
+  background-color: var(--color-white);
+  font-family: 'Lato', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+body {
+  position: relative;
+}
+
+a,
+a:visited {
+  color: var(--color-white);
+}
+
+button {
+  font-family: 'Lato', sans-serif;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+hr[role='separator'] {
+  border: 0 none;
+  border-bottom: 2px dotted var(--color-dark-gray);
+  margin: 1.5rem 1rem;
+}
+
+.icon-button {
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+}
+
+.icon-button[aria-label='thumbs up'] {
+  background-color: rgba(var(--color-green-positive), 0.8);
+}
+
+.icon-button[aria-label='thumbs up']:hover {
+  background-color: rgba(var(--color-green-positive), 1);
+}
+
+.icon-button[aria-label='thumbs down'] {
+  background-color: rgba(var(--color-yellow-negative), 0.8);
+}
+
+.icon-button[aria-label='thumbs down']:hover {
+  background-color: rgba(var(--color-yellow-negative), 1);
+}
+
+.icon-button > img {
+  width: 100%;
+  height: 100%;
+}
+
+main[role='main'] {
+  padding: 0 1rem;
+  margin-top: 2rem;
+}
+
+main h2,
+main h3,
+main h4 {
+  color: var(--color-dark-gray);
+  font-weight: 300;
+}
+
+main h2 {
+  margin: 0 0 2rem;
+  font-size: 2rem;
+}
+
+.max-centered {
+  display: contents;
+}
+
+@media all and (min-width: 768px) {
+  html,
+  body {
+    font-size: 14px;
+  }
+}
+
+@media all and (min-width: 1100px) {
+  html,
+  body {
+    font-size: 18px;
+  }
+
+  .max-centered {
+    position: relative;
+    display: block;
+    width: 100vw;
+    max-width: 1100px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
+  .max-centered > *,
+  .max-centered > hr[role='separator'] {
+    margin-right: 0;
+    margin-left: 0;
+  }
+
+  .max-centered main {
+    padding: 0;
+  }
+
+  main h2 {
+    font-size: 2.5rem;
+  }
+
+  hr[role='separator'] {
+    margin: 2rem 0;
+  }
+}
+</style>

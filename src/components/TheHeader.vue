@@ -4,11 +4,11 @@
     <img
       class="hero__background"
       srcset="
-        assets/img/pope-francis.png      750w,
-        assets/img/pope-francis.@2x.png 1440w
+        /assets/img/pope-francis.png      750w,
+        /assets/img/pope-francis.@2x.png 1440w
       "
       sizes="(min-width: 750px) 1440px, 100vw"
-      src="assets/img/pope-francis.png"
+      src="/assets/img/pope-francis.png"
       alt="Pope Francis"
     />
     <div class="max-centered">
@@ -29,9 +29,9 @@
 </template>
 
 <script lang="ts">
-import NavBar from "@/components/NavBar.vue";
-import { defineComponent } from "vue";
-import FeaturedCard from "./FeaturedCard.vue";
+import NavBar from '@/components/NavBar.vue';
+import { defineComponent } from 'vue';
+import FeaturedCard from './FeaturedCard.vue';
 
 export default defineComponent({
   setup() {
@@ -77,9 +77,53 @@ export default defineComponent({
   background-color: var(--color-light-background);
 }
 
+.closing-gauge__left {
+  position: relative;
+  display: flex;
+  width: 30%;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0.25rem 0 0;
+  background-color: var(--color-dark-background);
+  color: var(--color-white);
+  font-weight: 300;
+  text-transform: uppercase;
+}
+
+.closing-gauge__left:after {
+  position: absolute;
+  right: -0.5rem;
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 0.25rem solid transparent;
+  border-bottom: 0.25rem solid transparent;
+  border-left: 0.5rem solid var(--color-dark-background);
+  content: ' ';
+}
+
+.closing-gauge__right {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 0 0 0.75rem;
+}
+
+.closing-gauge__number {
+  color: var(--color-dark-gray);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.closing-gauge__desc {
+  color: var(--color-dark-gray);
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
 @media all and (min-width: 768px) {
   .hero {
-    max-height: 38rem;
+    max-height: 42rem;
   }
 
   .hero__background {
@@ -108,6 +152,28 @@ export default defineComponent({
     min-width: 600px;
     max-height: unset;
     margin-top: 2.5rem;
+  }
+
+  .closing-gauge__left {
+    padding-right: 1rem;
+  }
+
+  .closing-gauge__right {
+    padding-left: 1rem;
+  }
+
+  .closing-gauge__title {
+    font-size: 1.25rem;
+  }
+
+  .closing-gauge__number,
+  .closing-gauge__desc {
+    font-size: 2rem;
+  }
+
+  .closing-gauge__left:after {
+    border-top-width: 0.33rem;
+    border-bottom-width: 0.33rem;
   }
 }
 </style>

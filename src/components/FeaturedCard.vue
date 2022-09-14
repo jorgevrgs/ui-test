@@ -30,13 +30,13 @@
         class="icon-button flex justify-center items-center"
         aria-label="thumbs up"
       >
-        <img src="assets/img/thumbs-up.svg" alt="thumbs up" />
+        <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
       </button>
       <button
         class="icon-button flex justify-center items-center"
         aria-label="thumbs down"
       >
-        <img src="assets/img/thumbs-down.svg" alt="thumbs down" />
+        <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
       </button>
     </div>
   </div>
