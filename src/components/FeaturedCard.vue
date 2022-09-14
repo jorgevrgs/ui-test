@@ -27,16 +27,24 @@
     <p class="featured-card__cta">What's Your Veredict?</p>
     <div class="featured-card__buttons">
       <button
-        class="icon-button flex justify-center items-center bg-positive/80 hover:bg-positive"
+        class="h-11 w-1/2 flex justify-center items-center bg-positive/80 hover:bg-positive lg:h-auto"
         aria-label="thumbs up"
       >
-        <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
+        <img
+          src="/assets/img/thumbs-up.svg"
+          class="max-w-5 lg:h-8 lg:max-w-8 lg:my-5"
+          alt="thumbs up"
+        />
       </button>
       <button
-        class="icon-button flex justify-center items-center bg-negative/80 hover:bg-negative"
+        class="h-11 w-1/2 flex justify-center items-center bg-negative/80 hover:bg-negative lg:h-auto"
         aria-label="thumbs down"
       >
-        <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
+        <img
+          src="/assets/img/thumbs-down.svg"
+          class="max-w-5 lg:h-8 lg:max-w-8 lg:my-5"
+          alt="thumbs down"
+        />
       </button>
     </div>
   </div>
@@ -48,7 +56,7 @@ import { defineComponent } from 'vue';
 export default defineComponent({});
 </script>
 
-<style>
+<style scoped>
 .featured-card__glass-background {
   position: absolute;
   top: -20%;
@@ -60,7 +68,7 @@ export default defineComponent({});
         var(--color-dark-background),
         var(--color-dark-background)
       ),
-    -25vw 0/160vw no-repeat url('../assets/img/pope-francis.png');
+    -25vw 0/160vw no-repeat url(/assets/img/pope-francis.png);
   filter: blur(1rem);
 }
 
@@ -105,15 +113,6 @@ export default defineComponent({});
   margin: 0 -1rem -1rem;
 }
 
-.featured-card__buttons > .icon-button {
-  width: 50%;
-  height: 2.75rem;
-}
-
-.featured-card__buttons > .icon-button > img {
-  max-width: 1.25rem;
-}
-
 .featured-card__more-info {
   display: none;
 }
@@ -131,7 +130,7 @@ export default defineComponent({});
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      7vw -6.5rem/115vw auto no-repeat url(../assets/img/pope-francis.png);
+      7vw -6.5rem/115vw auto no-repeat url(/assets/img/pope-francis.png);
   }
 
   .featured-card__content {
@@ -156,7 +155,7 @@ export default defineComponent({});
           var(--color-dark-background),
           var(--color-dark-background)
         ),
-      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(../assets/img/pope-francis.png);
+      calc(-50vw + 650px) -6rem/105vw auto no-repeat url(/assets/img/pope-francis.png);
   }
 
   .featured-card__content {
@@ -175,16 +174,6 @@ export default defineComponent({});
 
   .featured-card__buttons {
     margin: 0 -1.5rem -2rem;
-  }
-
-  .featured-card__buttons > .icon-button {
-    height: auto;
-  }
-
-  .featured-card__buttons > .icon-button > img {
-    max-width: 2rem;
-    height: 2rem;
-    margin: 1.3rem 0;
   }
 }
 </style>

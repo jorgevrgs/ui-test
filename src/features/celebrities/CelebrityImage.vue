@@ -10,9 +10,9 @@
 </template>
 
 <script lang="ts">
+import { storage } from '@/plugins/firebase';
 import { getDownloadURL, ref } from '@firebase/storage';
 import { defineComponent } from 'vue';
-import { storage } from '../plugins/firebase';
 
 export default defineComponent({
   data() {

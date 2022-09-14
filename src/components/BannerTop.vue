@@ -1,5 +1,9 @@
 <template>
-  <aside class="banner banner-top" role="doc-tip" aria-label="Speak Out">
+  <aside
+    class="banner banner-top bg-slate-200"
+    role="doc-tip"
+    aria-label="Speak Out"
+  >
     <div class="banner__left">
       <span class="banner__hairline">Speak out. Be heard.</span>
       <span class="banner__title">Be counted</span>
@@ -30,6 +34,16 @@ export default defineComponent({
 </script>
 
 <style scoped>
+.banner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
 .banner-top .banner__left {
   flex-basis: 40%;
   padding-right: 1rem;

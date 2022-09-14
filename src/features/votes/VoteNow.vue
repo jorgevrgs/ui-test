@@ -15,21 +15,25 @@
 </template>
 
 <script lang="ts">
+import BaseIcon from '@/components/BaseIcon.vue';
+import { VoteState } from '@/constants';
 import { defineComponent } from 'vue';
-import { VoteState } from '../constants';
-import BaseIcon from './BaseIcon.vue';
 
 export default defineComponent({
+  components: { BaseIcon },
   data() {
     return {
       vote: VoteState.neutral,
       baseClasses: ['flex', 'items-center', 'justify-center', 'w-8', 'mr-4'],
     };
   },
-  components: { BaseIcon },
   computed: {
     positiveVoteClasses(): string[] {
-      const classes = [...this.baseClasses, 'bg-green-positive'];
+      const classes = [
+        ...this.baseClasses,
+        'bg-positive/80',
+        'hover:bg-positive',
+      ];
       if (this.vote === VoteState.positive) {
         classes.push('border-white', 'border-2');
       } else {
@@ -39,7 +43,11 @@ export default defineComponent({
       return classes;
     },
     negativeVoteClasses(): string[] {
-      const classes = [...this.baseClasses, 'bg-yellow-negative'];
+      const classes = [
+        ...this.baseClasses,
+        'bg-negative/80',
+        'hover:bg-negative',
+      ];
       if (this.vote === VoteState.negative) {
         classes.push('border-white', 'border-2');
       } else {
@@ -74,5 +82,3 @@ export default defineComponent({
   },
 });
 </script>
-
-<style></style>

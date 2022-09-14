@@ -1,7 +1,9 @@
 <template>
-  <div className="flex w-full">
-    <VotePercentage :positive="positivePercentage" />
-    <VotePercentage :negative="negativePercentage" />
+  <div class="absolute inset-x-0 bottom-0 w-full">
+    <div className="flex w-full">
+      <VotePercentage :positive="positivePercentage" />
+      <VotePercentage :negative="negativePercentage" />
+    </div>
   </div>
 </template>
 

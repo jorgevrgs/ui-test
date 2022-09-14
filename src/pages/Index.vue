@@ -3,7 +3,7 @@
 </template>
 
 <script lang="ts">
-import CelebritiesList from '@/components/CelebritiesList.vue';
+import CelebritiesList from '@/features/celebrities/CelebritiesList.vue';
 import { useCelebritiesStore } from '@/stores/celebrities.store';
 import { defineComponent } from 'vue';
 

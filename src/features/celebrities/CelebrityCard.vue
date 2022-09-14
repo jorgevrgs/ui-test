@@ -1,6 +1,6 @@
 <template>
   <article
-    class="flex flex-col items-center px-4 text-white relative aspect-square"
+    class="flex flex-col items-center px-4 text-white relative aspect-square w-96"
   >
     <CelebrityImage :name="celebrity.name" :picture="celebrity.picture" />
 
@@ -14,28 +14,22 @@
         {{ `${getTimeAgo(celebrity.lastUpdated)} in ${celebrity.category}` }}
       </p>
 
-      <VoteView :celebrity-id="celebrity.id" />
-    </div>
-
-    <div class="absolute inset-x-0 bottom-0">
-      <VeredictView
-        :positive-percentage="positivePercentage.toFixed(0)"
-        :negative-percentage="negativePercentage.toFixed(0)"
+      <VoteSection
+        :celebrity-id="celebrity.id"
+        :negative-percentage="negativePercentage"
+        :positive-percentage="positivePercentage"
       />
     </div>
   </article>
 </template>
 
 <script lang="ts">
-import dayjs from 'dayjs';
-import relativeTime from 'dayjs/plugin/relativeTime';
+import type { Celebrity } from '@/types';
+import { getTimeAgo } from '@/utils/dates';
 import { defineComponent, PropType } from 'vue';
-import type { Celebrity } from '../types';
+import VeredictView from '../votes/VoteBar.vue';
+import VoteSection from '../votes/VoteSection.vue';
 import CelebrityImage from './CelebrityImage.vue';
-import VeredictView from './VeredictView.vue';
-import VoteView from './VoteView.vue';
-
-dayjs.extend(relativeTime);
 
 export default defineComponent({
   props: {
@@ -55,13 +49,11 @@ export default defineComponent({
       return (this.celebrity.votes.negative / this.totalVotes) * 100;
     },
   },
-  components: { VeredictView, CelebrityImage, VoteView },
+  components: { VeredictView, CelebrityImage, VoteSection },
   methods: {
     getTimeAgo(date: Date) {
-      return dayjs(date).fromNow();
+      return getTimeAgo(date);
     },
   },
 });
 </script>
-
-<style></style>

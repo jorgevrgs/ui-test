@@ -21,8 +21,8 @@
 </template>
 
 <script lang="ts">
+import BaseIcon from '@/components/BaseIcon.vue';
 import { defineComponent, PropType } from 'vue';
-import BaseIcon from './BaseIcon.vue';
 
 export default defineComponent({
   props: {

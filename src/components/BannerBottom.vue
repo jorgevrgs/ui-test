@@ -1,5 +1,9 @@
 <template>
-  <aside class="banner banner-bottom" role="doc-tip" aria-label="Submit a name">
+  <aside
+    class="banner banner-bottom bg-slate-200"
+    role="doc-tip"
+    aria-label="Submit a name"
+  >
     <img
       srcset="
         /assets/img/bg-people.png      750w,
@@ -29,6 +33,16 @@ export default defineComponent({});
 </script>
 
 <style scoped>
+.banner {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  margin-block: 1rem;
+}
+
 .banner__background {
   position: absolute;
   top: 0;
