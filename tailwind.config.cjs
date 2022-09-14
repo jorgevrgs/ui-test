@@ -4,12 +4,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        green: {
-          positive: '60 187 180',
-        },
-        yellow: {
-          negative: '249 173 29',
-        },
+        positive: 'rgb(60, 187, 180)',
+        negative: 'rgb(249, 173, 29)',
       },
     },
   },

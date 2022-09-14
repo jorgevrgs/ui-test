@@ -41,7 +41,7 @@ export default defineComponent({
 });
 </script>
 
-<style>
+<style scoped>
 .hero {
   position: relative;
   overflow: hidden;

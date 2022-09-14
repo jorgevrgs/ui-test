@@ -46,7 +46,7 @@ export default defineComponent({
       return this.isPositive ? 'thumbs up' : 'thumbs down';
     },
     bgColor() {
-      return this.isPositive ? 'bg-green-positive' : 'bg-yellow-negative';
+      return this.isPositive ? 'bg-positive' : 'bg-negative';
     },
     iconName() {
       return this.isPositive ? 'thumbs-up' : 'thumbs-down';
