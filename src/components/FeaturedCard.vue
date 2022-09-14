@@ -27,13 +27,13 @@
     <p class="featured-card__cta">What's Your Veredict?</p>
     <div class="featured-card__buttons">
       <button
-        class="icon-button flex justify-center items-center"
+        class="icon-button flex justify-center items-center bg-positive/80 hover:bg-positive"
         aria-label="thumbs up"
       >
         <img src="/assets/img/thumbs-up.svg" alt="thumbs up" />
       </button>
       <button
-        class="icon-button flex justify-center items-center"
+        class="icon-button flex justify-center items-center bg-negative/80 hover:bg-negative"
         aria-label="thumbs down"
       >
         <img src="/assets/img/thumbs-down.svg" alt="thumbs down" />
